@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import "./App.css";
+import CustomerAdd from "./CustomerAdd";
+import CustomerView from "./CustomerView";
+import { store } from "../src/store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div style={{ margin: "100px 400px" }}>
+        <h3>React redux customer example</h3>
+        <CustomerAdd />
+        <CustomerView />
+      </div>
+    </Provider>
   );
 }
 
